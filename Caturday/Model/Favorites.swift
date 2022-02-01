@@ -17,6 +17,12 @@ class Favorites: ObservableObject {
     
     init() {
         // load from device
+        if let savedItems = UserDefaults.standard.data(forKey: setKey) {
+            if let decoded = try? JSONDecoder().decode(Set<String>.self, from: savedItems) {
+                cats = decoded
+                return
+            }
+        }
         
         cats = []
     }
@@ -41,11 +47,9 @@ class Favorites: ObservableObject {
         save()
     }
     
-    /// MARK: need to implement save functionality for local devices
-    /// probably use UserDefaults to save and load favorites so they're not reset each time
-    /// the app is opened and closed
-    
     func save() {
-        
+        if let encoded = try? JSONEncoder().encode(cats) {
+            UserDefaults.standard.set(encoded, forKey: setKey)
+        }
     }
 }

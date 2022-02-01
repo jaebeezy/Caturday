@@ -29,8 +29,10 @@ struct HomeView: View {
                     Text("The current time is")
                     Text(date, style: .time)
                 }
-                
+                                
                 Text("And it is Caturday")
+                
+                Divider()
                 
                 Text(fact)
             }

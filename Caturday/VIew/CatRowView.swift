@@ -40,6 +40,8 @@ struct CatRowView: View {
                     } else {
                         ProgressView()
                             .frame(width: imageSize, height: imageSize)
+                            .cornerRadius(4)
+                            .padding(5)
                     }
                 }
             } else {

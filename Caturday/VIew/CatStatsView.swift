@@ -19,7 +19,7 @@ struct CatStatsView: View {
     }
     
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             VStack(alignment: .leading) {
                 ForEach(0..<starArray.count) {num in
                     StarView(catDetail: starArray[num], text: textArray[num])

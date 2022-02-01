@@ -200,9 +200,9 @@
 			children = (
 				AE7A1C9027A8B97100A0C317 /* Favorites.swift */,
 				AE512508278D581100B574D7 /* Cat.swift */,
+				AE7A1C9227A8D49800A0C317 /* CatFact.swift */,
 				AE51250A278D587B00B574D7 /* CatImage.swift */,
 				AE8D325C27962E38001CF9FF /* Tabs.swift */,
-				AE7A1C9227A8D49800A0C317 /* CatFact.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

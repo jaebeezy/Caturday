@@ -29,6 +29,8 @@ struct CatFavoritesView: View {
             ZStack {
                 if favoriteCats.isEmpty {
                     Text("Add some cat breeds to your favorites.")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
                 } else {
                     List {
                         ForEach(favoriteCats) { cat in

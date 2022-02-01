@@ -16,6 +16,10 @@ struct CatDetailView: View {
     let cat: Cat
     let tabs = Tabs.allCases
     
+    /// MARK: to-do
+    /// adding an tapgesture for the cat image
+    /// once tapped, you open a new catimage view with the full resolution pic of the cat that's clipped on the catdetailview
+    
     var body: some View {
         VStack {
             if cat.image?.url != nil {
