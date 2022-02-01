@@ -16,6 +16,8 @@ struct CatDetailView: View {
     let cat: Cat
     let tabs = Tabs.allCases
     
+    let frameHeight = UIScreen.main.bounds.size.height / 2.6
+    
     /// MARK: to-do
     /// adding an tapgesture for the cat image
     /// once tapped, you open a new catimage view with the full resolution pic of the cat that's clipped on the catdetailview
@@ -27,25 +29,28 @@ struct CatDetailView: View {
                     if let image = phase.image {
                         image.resizable()
                             .scaledToFill()
-                            .frame(height: 350)
+                            .frame(height: frameHeight)
                             .clipped()
                             
                     } else if phase.error != nil {
                         ZStack {
                             Color.red
-                                .frame(height: 300)
+                                .frame(height: frameHeight)
                                 .clipped()
                             Text("😿")
                                 .font(.system(size: 30))
                         }
                     } else {
                         ProgressView()
+                            .frame(height: frameHeight)
+                            .clipped()
+
                     }
                 }
             } else {
                 ZStack() {
                     Color.gray
-                        .frame(height: 350)
+                        .frame(height: frameHeight)
                         .clipped()
                     VStack {
                         Text("🐈")

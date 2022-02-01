@@ -16,7 +16,8 @@ struct CatEtcView: View {
                     Image(systemName: "paperplane")
                         .font(.title)
                     Text("Wikipedia Page")
-                }.padding()
+                }
+                .padding()
             }
         } else {
             Text("Meow... nothing to be seen here.")

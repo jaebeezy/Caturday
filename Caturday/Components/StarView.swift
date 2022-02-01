@@ -15,7 +15,14 @@ struct StarView: View {
         HStack(spacing: 0) {
             Text(text)
                 .font(.caption)
+                .fontWeight(.black)
+                .padding(4)
+                .foregroundColor(.white)
+                .background(.black.opacity(0.75))
+                .clipShape(Capsule())
+            
             Spacer()
+            
             ForEach(0..<5) { id in
                 Image(systemName: "star.fill")
                     .foregroundColor(catDetail > id ? .pink : .gray)

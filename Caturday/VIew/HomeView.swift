@@ -9,8 +9,28 @@ import SwiftUI
 
 struct HomeView: View {
     
-    let date = Date()
+    @State private var date = Date()
     let fact: String
+    
+    // formating time to add seconds
+    var timeFormat: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm:ss a"
+        return formatter
+    }
+    
+    // transform date obj to string
+    func timeString(_ date: Date) -> String {
+        let time = timeFormat.string(from: date)
+        return time
+    }
+    
+    // function to live update timer
+    var updateTimer: Timer {
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            self.date = Date()
+        }
+    }
     
     /// MARK:
     /// need to animate the home page UI
@@ -27,7 +47,10 @@ struct HomeView: View {
                 
                 VStack {
                     Text("The current time is")
-                    Text(date, style: .time)
+                    Text(timeString(date))
+                        .onAppear {
+                            let _ = self.updateTimer
+                        }
                 }
                                 
                 Text("And it is Caturday")

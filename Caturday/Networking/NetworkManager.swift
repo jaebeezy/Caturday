@@ -13,6 +13,7 @@ class NetworkManager: ObservableObject {
     @Published var catFact = ""
     @Published var isLoading: Bool = false
     @Published var errorMessage: String? = nil
+    @Published var factErrorMessage: String? = nil
     
     let service: APIServiceProtocol
     
@@ -44,6 +45,9 @@ class NetworkManager: ObservableObject {
     }
     
     func fetchCatFact() {
+        
+        factErrorMessage = nil
+        
         let url = URL(string: "https://catfact.ninja/fact")!
         
         service.fetchFact(url: url) { [unowned self] res in
@@ -54,7 +58,7 @@ class NetworkManager: ObservableObject {
                 case .success(let catFact):
                     self.catFact = catFact.fact
                 case .failure(let error):
-                    self.errorMessage = error.localizedDescription
+                    self.factErrorMessage = error.localizedDescription
                 }
             }
         }
