@@ -17,6 +17,10 @@ class Favorites: ObservableObject {
         cats = []
     }
     
+    func isEmpty() -> Bool {
+        return cats.isEmpty
+    }
+    
     func contains(_ cat: Cat) -> Bool {
         return cats.contains(cat.id)
     }

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct CatRowView: View {
+    
+    @EnvironmentObject var favorites: Favorites
+    
     let cat: Cat
     let imageSize: CGFloat = 100
     
@@ -56,8 +59,12 @@ struct CatRowView: View {
                 Text(cat.name)
                     .font(.system(size: 20, weight: .semibold, design: .rounded))
                     .padding(.horizontal)
-                
             }
+            
+            Spacer()
+            
+            Image(systemName: favorites.contains(cat) ? "heart.fill" : "")
+                .foregroundColor(.red)
         }
     }
 }

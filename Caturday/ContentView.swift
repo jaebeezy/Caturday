@@ -36,7 +36,7 @@ struct ContentView: View {
                 Text("Breeds")
             }
             
-            CatFavoritesView()
+            CatFavoritesView(cats: networkManager.cats)
                 .tabItem {
                     Image(systemName: "star.fill")
                     Text("Favorites")

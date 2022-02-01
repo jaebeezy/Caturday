@@ -11,10 +11,34 @@ struct CatFavoritesView: View {
     
     @EnvironmentObject var favorites: Favorites
     
+    let cats: [Cat]
+    var filteredCats: [Cat] {
+        if favorites.isEmpty() {
+            return []
+        } else {
+            return cats.filter {
+                favorites.contains($0)
+            }
+        }
+    }
+    
+    
     var body: some View {
         NavigationView {
-            List {
-                Text("HI")
+            ZStack {
+                if favorites.isEmpty() {
+                    Text("Add some cat breeds to your favorites.")
+                } else {
+                    List {
+                        ForEach(filteredCats) { cat in
+                            NavigationLink {
+                                CatDetailView(cat: cat)
+                            } label: {
+                                CatRowView(cat: cat)
+                            }
+                        }
+                    }
+                }
             }
             .listStyle(PlainListStyle())
             .navigationTitle("Favorites")
@@ -22,8 +46,9 @@ struct CatFavoritesView: View {
     }
 }
 
+
 struct CatFavoritesView_Previews: PreviewProvider {
     static var previews: some View {
-        CatFavoritesView()
+        CatFavoritesView(cats: NetworkManager.successState().cats)
     }
 }
