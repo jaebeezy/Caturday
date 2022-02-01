@@ -17,13 +17,17 @@ struct CatMainView: View {
                 
                 Text(cat.name)
                     .font(.largeTitle)
+
+                Divider()
+
                 Text(cat.temperament)
                     .lineLimit(2)
                     .font(.footnote)
+                    .padding(.top)
                 Text(cat.breedExplanation)
                     .font(.body)
                     .padding(.vertical)
-                Text("Life Span: \(cat.lifeSpan) years")
+                Text("Average Life Span: \(cat.lifeSpan) years")
                     .font(.caption)
                 Text("County of Origin: \(cat.origin)")
                     .font(.caption)

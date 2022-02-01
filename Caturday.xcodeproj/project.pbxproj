@@ -26,6 +26,9 @@
 		AE512513278D636900B574D7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE512512278D636900B574D7 /* LoadingView.swift */; };
 		AE61890B278E1EEE00745C16 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE61890A278E1EEE00745C16 /* APIService.swift */; };
 		AE789438279B503800CDE7FF /* CatPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE789437279B503800CDE7FF /* CatPageView.swift */; };
+		AE7A1C8B27A8449400A0C317 /* CatFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A1C8A27A8449400A0C317 /* CatFavoritesView.swift */; };
+		AE7A1C8F27A8677500A0C317 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A1C8E27A8677500A0C317 /* HomeView.swift */; };
+		AE7A1C9127A8B97100A0C317 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A1C9027A8B97100A0C317 /* Favorites.swift */; };
 		AE8D325B27962E1A001CF9FF /* TabMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D325A27962E1A001CF9FF /* TabMenuView.swift */; };
 		AE8D325D27962E38001CF9FF /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D325C27962E38001CF9FF /* Tabs.swift */; };
 		AEC561C7278F347600FFD188 /* CatRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC561C6278F347600FFD188 /* CatRowView.swift */; };
@@ -75,6 +78,9 @@
 		AE512512278D636900B574D7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		AE61890A278E1EEE00745C16 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		AE789437279B503800CDE7FF /* CatPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatPageView.swift; sourceTree = "<group>"; };
+		AE7A1C8A27A8449400A0C317 /* CatFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFavoritesView.swift; sourceTree = "<group>"; };
+		AE7A1C8E27A8677500A0C317 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AE7A1C9027A8B97100A0C317 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		AE8D325A27962E1A001CF9FF /* TabMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMenuView.swift; sourceTree = "<group>"; };
 		AE8D325C27962E38001CF9FF /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		AEC561C6278F347600FFD188 /* CatRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatRowView.swift; sourceTree = "<group>"; };
@@ -174,7 +180,9 @@
 			children = (
 				AE512510278D636300B574D7 /* ErrorView.swift */,
 				AE512512278D636900B574D7 /* LoadingView.swift */,
+				AE7A1C8E27A8677500A0C317 /* HomeView.swift */,
 				AE51250E278D634F00B574D7 /* CatListView.swift */,
+				AE7A1C8A27A8449400A0C317 /* CatFavoritesView.swift */,
 				AEC561C6278F347600FFD188 /* CatRowView.swift */,
 				AEC561C8278F34CA00FFD188 /* CatDetailView.swift */,
 				AE789437279B503800CDE7FF /* CatPageView.swift */,
@@ -188,6 +196,7 @@
 		AE512506278D574700B574D7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AE7A1C9027A8B97100A0C317 /* Favorites.swift */,
 				AE512508278D581100B574D7 /* Cat.swift */,
 				AE51250A278D587B00B574D7 /* CatImage.swift */,
 				AE8D325C27962E38001CF9FF /* Tabs.swift */,
@@ -359,6 +368,7 @@
 				AE8D325B27962E1A001CF9FF /* TabMenuView.swift in Sources */,
 				AE29C40227975E1200F993FB /* CatMainView.swift in Sources */,
 				AED364B2279090D4006642AB /* APIServiceProtocol.swift in Sources */,
+				AE7A1C8B27A8449400A0C317 /* CatFavoritesView.swift in Sources */,
 				AE512511278D636300B574D7 /* ErrorView.swift in Sources */,
 				AE61890B278E1EEE00745C16 /* APIService.swift in Sources */,
 				AE512513278D636900B574D7 /* LoadingView.swift in Sources */,
@@ -366,6 +376,8 @@
 				AE512509278D581100B574D7 /* Cat.swift in Sources */,
 				AE8D325D27962E38001CF9FF /* Tabs.swift in Sources */,
 				AE29C4082797C98100F993FB /* CatEtcView.swift in Sources */,
+				AE7A1C9127A8B97100A0C317 /* Favorites.swift in Sources */,
+				AE7A1C8F27A8677500A0C317 /* HomeView.swift in Sources */,
 				AE29C4062797876E00F993FB /* CatStatsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

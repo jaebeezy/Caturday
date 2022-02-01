@@ -11,6 +11,8 @@ struct CatDetailView: View {
     
     @State private var selectedTab = Tabs.allCases.first!
     
+    @EnvironmentObject var favorites: Favorites
+    
     let cat: Cat
     let tabs = Tabs.allCases
     
@@ -23,6 +25,7 @@ struct CatDetailView: View {
                             .scaledToFill()
                             .frame(height: 350)
                             .clipped()
+                            
                     } else if phase.error != nil {
                         ZStack {
                             Color.red
@@ -50,13 +53,28 @@ struct CatDetailView: View {
                     
                 }
             }
-            
+                        
             TabMenuView(selectedTab: $selectedTab, tabs: tabs)
             CatPageView(selectedTab: $selectedTab, tabs: tabs, cat: cat)
             
         }
         .navigationBarTitleDisplayMode(.inline)
         .edgesIgnoringSafeArea(.bottom)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    if favorites.contains(cat) {
+                        favorites.remove(cat)
+                    } else {
+                        favorites.add(cat)
+                    }
+                } label: {
+                    Image(systemName: favorites.contains(cat) ? "heart.fill" : "heart")
+                        .foregroundColor(.red)
+                }
+
+            }
+        }
     }
 }
 

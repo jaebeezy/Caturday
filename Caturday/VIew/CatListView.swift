@@ -34,7 +34,7 @@ struct CatListView: View {
                 }
             }
             .listStyle(PlainListStyle())
-            .navigationTitle("Caturday")
+            .navigationTitle("Breeds")
             .searchable(text: $searchText)
         }
         .refreshable {
