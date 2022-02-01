@@ -61,10 +61,13 @@ struct CatRowView: View {
                     .padding(.horizontal)
             }
             
-            Spacer()
+            if favorites.contains(cat) {
+                Spacer()
+                
+                Image(systemName: "heart.fill" )
+                    .foregroundColor(.red)
+            }
             
-            Image(systemName: favorites.contains(cat) ? "heart.fill" : "")
-                .foregroundColor(.red)
         }
     }
 }

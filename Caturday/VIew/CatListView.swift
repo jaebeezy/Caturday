@@ -10,8 +10,8 @@ import SwiftUI
 struct CatListView: View {
     
     @State private var searchText: String = ""
-    let networkManager = NetworkManager()
     
+    let networkManager = NetworkManager()
     let cats: [Cat]
     var filteredCats: [Cat] {
         if searchText.count == 0 {

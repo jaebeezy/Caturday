@@ -11,8 +11,10 @@ struct CatFavoritesView: View {
     
     @EnvironmentObject var favorites: Favorites
     
+    // grabbing the full cats array from networkmanager
+    // then populating the UI based on
     let cats: [Cat]
-    var filteredCats: [Cat] {
+    var favoriteCats: [Cat] {
         if favorites.isEmpty() {
             return []
         } else {
@@ -22,15 +24,14 @@ struct CatFavoritesView: View {
         }
     }
     
-    
     var body: some View {
         NavigationView {
             ZStack {
-                if favorites.isEmpty() {
+                if favoriteCats.isEmpty {
                     Text("Add some cat breeds to your favorites.")
                 } else {
                     List {
-                        ForEach(filteredCats) { cat in
+                        ForEach(favoriteCats) { cat in
                             NavigationLink {
                                 CatDetailView(cat: cat)
                             } label: {

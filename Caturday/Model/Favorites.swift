@@ -9,11 +9,15 @@ import Foundation
 
 class Favorites: ObservableObject {
     
+    // private to make sure other views are messing with this logic
+    // also using set because unique items (cat.id) and faster
     private var cats: Set<String>
     
     private var setKey = "favorites"
     
     init() {
+        // load from device
+        
         cats = []
     }
     
@@ -36,6 +40,10 @@ class Favorites: ObservableObject {
         cats.remove(cat.id)
         save()
     }
+    
+    /// MARK: need to implement save functionality for local devices
+    /// probably use UserDefaults to save and load favorites so they're not reset each time
+    /// the app is opened and closed
     
     func save() {
         

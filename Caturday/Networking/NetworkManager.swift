@@ -10,6 +10,7 @@ import Foundation
 class NetworkManager: ObservableObject {
     
     @Published var cats = [Cat]()
+    @Published var catFact = ""
     @Published var isLoading: Bool = false
     @Published var errorMessage: String? = nil
     
@@ -18,6 +19,7 @@ class NetworkManager: ObservableObject {
     init(service: APIServiceProtocol = APIService()) {
         self.service = service
         fetchCatBreeds()
+        fetchCatFact()
     }
     
     func fetchCatBreeds() {
@@ -39,6 +41,23 @@ class NetworkManager: ObservableObject {
             }
         }
         
+    }
+    
+    func fetchCatFact() {
+        let url = URL(string: "https://catfact.ninja/fact")!
+        
+        service.fetchFact(url: url) { [unowned self] res in
+            DispatchQueue.main.async {
+                // add state loading
+                
+                switch res {
+                case .success(let catFact):
+                    self.catFact = catFact.fact
+                case .failure(let error):
+                    self.errorMessage = error.localizedDescription
+                }
+            }
+        }
     }
     
     // MARK: previews

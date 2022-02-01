@@ -16,7 +16,7 @@ struct ContentView: View {
         
         TabView {
             
-            HomeView()
+            HomeView(fact: networkManager.catFact)
                 .tabItem {
                     Image(systemName: "house.fill")
                     Text("Home")

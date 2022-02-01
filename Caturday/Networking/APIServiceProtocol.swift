@@ -9,4 +9,5 @@ import Foundation
 
 protocol APIServiceProtocol {
     func fetchCats(url: URL?, completion: @escaping(Result<[Cat], APIError>) -> Void)
+    func fetchFact(url: URL?, completion: @escaping(Result<CatFact, APIError>) -> Void)
 }

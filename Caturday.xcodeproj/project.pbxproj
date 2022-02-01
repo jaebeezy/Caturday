@@ -29,6 +29,7 @@
 		AE7A1C8B27A8449400A0C317 /* CatFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A1C8A27A8449400A0C317 /* CatFavoritesView.swift */; };
 		AE7A1C8F27A8677500A0C317 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A1C8E27A8677500A0C317 /* HomeView.swift */; };
 		AE7A1C9127A8B97100A0C317 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A1C9027A8B97100A0C317 /* Favorites.swift */; };
+		AE7A1C9327A8D49800A0C317 /* CatFact.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A1C9227A8D49800A0C317 /* CatFact.swift */; };
 		AE8D325B27962E1A001CF9FF /* TabMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D325A27962E1A001CF9FF /* TabMenuView.swift */; };
 		AE8D325D27962E38001CF9FF /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8D325C27962E38001CF9FF /* Tabs.swift */; };
 		AEC561C7278F347600FFD188 /* CatRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC561C6278F347600FFD188 /* CatRowView.swift */; };
@@ -81,6 +82,7 @@
 		AE7A1C8A27A8449400A0C317 /* CatFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFavoritesView.swift; sourceTree = "<group>"; };
 		AE7A1C8E27A8677500A0C317 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		AE7A1C9027A8B97100A0C317 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
+		AE7A1C9227A8D49800A0C317 /* CatFact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFact.swift; sourceTree = "<group>"; };
 		AE8D325A27962E1A001CF9FF /* TabMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMenuView.swift; sourceTree = "<group>"; };
 		AE8D325C27962E38001CF9FF /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		AEC561C6278F347600FFD188 /* CatRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatRowView.swift; sourceTree = "<group>"; };
@@ -140,10 +142,10 @@
 			children = (
 				AE5124DB278D56A700B574D7 /* CaturdayApp.swift */,
 				AE5124DD278D56A700B574D7 /* ContentView.swift */,
-				AE8D325927962E04001CF9FF /* Components */,
 				AE512505278D573F00B574D7 /* VIew */,
 				AE512507278D574D00B574D7 /* Networking */,
 				AE512506278D574700B574D7 /* Model */,
+				AE8D325927962E04001CF9FF /* Components */,
 				AE5124DF278D56A800B574D7 /* Assets.xcassets */,
 				AE5124E1278D56A800B574D7 /* Preview Content */,
 			);
@@ -178,8 +180,6 @@
 		AE512505278D573F00B574D7 /* VIew */ = {
 			isa = PBXGroup;
 			children = (
-				AE512510278D636300B574D7 /* ErrorView.swift */,
-				AE512512278D636900B574D7 /* LoadingView.swift */,
 				AE7A1C8E27A8677500A0C317 /* HomeView.swift */,
 				AE51250E278D634F00B574D7 /* CatListView.swift */,
 				AE7A1C8A27A8449400A0C317 /* CatFavoritesView.swift */,
@@ -189,6 +189,8 @@
 				AE29C40127975E1200F993FB /* CatMainView.swift */,
 				AE29C4052797876E00F993FB /* CatStatsView.swift */,
 				AE29C4072797C98100F993FB /* CatEtcView.swift */,
+				AE512512278D636900B574D7 /* LoadingView.swift */,
+				AE512510278D636300B574D7 /* ErrorView.swift */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -200,6 +202,7 @@
 				AE512508278D581100B574D7 /* Cat.swift */,
 				AE51250A278D587B00B574D7 /* CatImage.swift */,
 				AE8D325C27962E38001CF9FF /* Tabs.swift */,
+				AE7A1C9227A8D49800A0C317 /* CatFact.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				AEC561C9278F34CA00FFD188 /* CatDetailView.swift in Sources */,
 				AE51250D278D615200B574D7 /* NetworkManager.swift in Sources */,
 				AEC561C7278F347600FFD188 /* CatRowView.swift in Sources */,
+				AE7A1C9327A8D49800A0C317 /* CatFact.swift in Sources */,
 				AED364B02790908B006642AB /* APIMockService.swift in Sources */,
 				AE789438279B503800CDE7FF /* CatPageView.swift in Sources */,
 				AE8D325B27962E1A001CF9FF /* TabMenuView.swift in Sources */,

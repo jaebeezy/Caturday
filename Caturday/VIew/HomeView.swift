@@ -10,6 +10,12 @@ import SwiftUI
 struct HomeView: View {
     
     let date = Date()
+    let fact: String
+    
+    /// MARK:
+    /// need to animate the home page UI
+    /// i want an animated time and date
+    /// and then adding like a random cat fact. and maybe pressing a button to fetch a new cat fact.
     
     var body: some View {
         NavigationView {
@@ -25,6 +31,8 @@ struct HomeView: View {
                 }
                 
                 Text("And it is Caturday")
+                
+                Text(fact)
             }
             .navigationTitle("Welcome")
         }
@@ -32,8 +40,3 @@ struct HomeView: View {
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
-}
