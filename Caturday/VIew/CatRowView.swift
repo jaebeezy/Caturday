@@ -26,6 +26,7 @@ struct CatRowView: View {
                             .clipped()
                             .cornerRadius(4)
                             .padding(5)
+                            .shadow(color: Color.black.opacity(0.25), radius: 25, x: 0, y: 20)
                         
                     } else if phase.error != nil {
                         ZStack {

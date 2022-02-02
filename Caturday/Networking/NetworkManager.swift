@@ -50,15 +50,15 @@ class NetworkManager: ObservableObject {
         
         let url = URL(string: "https://catfact.ninja/fact")!
         
-        service.fetchFact(url: url) { [unowned self] res in
+        service.fetchFact(url: url) { [weak self] res in
             DispatchQueue.main.async {
                 // add state loading
                 
                 switch res {
                 case .success(let catFact):
-                    self.catFact = catFact.fact
+                    self?.catFact = catFact.fact
                 case .failure(let error):
-                    self.factErrorMessage = error.localizedDescription
+                    self?.factErrorMessage = error.localizedDescription
                 }
             }
         }
