@@ -14,21 +14,15 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-            
-            if fact.isEmpty {
-                ProgressView()
-            } else {
-                Section {
-                    TileView(fact: fact)
-                }
+            TileView(fact: fact)
                 .navigationTitle("Home")
-            }
         }
     }
 }
 
+
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(fact: "hello")
+        HomeView(fact: "A cat is a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline.")
     }
 }

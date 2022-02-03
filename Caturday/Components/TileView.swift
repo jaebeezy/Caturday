@@ -78,9 +78,8 @@ struct TileView: View {
                 VStack(alignment: .leading, spacing: 0) {
                     
                     Text("Welcome!")
-                        .bold()
-                        .font(.system(size: 40, weight: .heavy))
-                        
+                        .fontWeight(.bold)
+                        .font(.title)
                     Text("Today is")
                         .font(.caption)
                     Text(date, style: .date)
@@ -88,18 +87,16 @@ struct TileView: View {
                     Text("The current time is")
                         .font(.caption)
                     Text(timeString(date))
-                        .font(.system(size: 40))
+                        .font(.title)
                         .onAppear {
                             let _ = self.updateTimer
                         }
                     Text("And just like every other day it is")
                         .font(.caption)
                     Text("Caturday.")
-                        .font(.system(size: 60))
-                        .fontWeight(.semibold)
-                    
-                    
-                    
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                                                        
                     Text("Random Cat Fact")
                         .font(.caption)
                         .fontWeight(.heavy)
@@ -107,26 +104,31 @@ struct TileView: View {
                         .foregroundColor(.red.opacity(0.75))
                         .background(.white)
                         .clipShape(Capsule())
-                        .padding(.top, UIScreen.main.bounds.height / 20)
+                        .padding(.top, UIScreen.main.bounds.height / 25)
                     
-                    ScrollView(showsIndicators: false) {
-                        Text(fact)
-                            .font(.body)
-                            .multilineTextAlignment(.leading)
-                            .padding(.vertical, 10)
-                            .padding(.trailing, 30)
+                    
+                    if fact.isEmpty {
+                        ProgressView()
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                            .offset(x: -10)
+                    } else {
+                        ScrollView(showsIndicators: false) {
+                            Text(fact)
+                                .font(.callout)
+                                .multilineTextAlignment(.leading)
+                                .padding(.vertical, 5)
+                                .padding(.trailing, UIScreen.main.bounds.width / 14)
+                        }
+                        
                     }
                     
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                .padding(.top, 30)
-                .padding(.leading, 30)
+                .padding(.top, UIScreen.main.bounds.width / 14)
+                .padding(.leading, UIScreen.main.bounds.width / 14)
                 
                 
             }
-            
-            
-            
         }
         
         .foregroundColor(.white)
@@ -145,7 +147,7 @@ struct TileView: View {
 
 struct TileView_Previews: PreviewProvider {
     static var previews: some View {
-        TileView(fact: "A cat is a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. ")
+        TileView(fact: "A cat is a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline. Yes a feline.")
     }
 }
 
