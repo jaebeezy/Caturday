@@ -185,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				AE7A1C8E27A8677500A0C317 /* HomeView.swift */,
+				AE7A1C9427A9D8DD00A0C317 /* TileView.swift */,
 				AE51250E278D634F00B574D7 /* CatListView.swift */,
 				AE7A1C8A27A8449400A0C317 /* CatFavoritesView.swift */,
 				AEC561C6278F347600FFD188 /* CatRowView.swift */,
@@ -228,7 +229,6 @@
 			children = (
 				AE8D325A27962E1A001CF9FF /* TabMenuView.swift */,
 				AE29C4032797758700F993FB /* StarView.swift */,
-				AE7A1C9427A9D8DD00A0C317 /* TileView.swift */,
 				AE7A1C9627A9DB7200A0C317 /* RoundedCorner.swift */,
 			);
 			path = Components;

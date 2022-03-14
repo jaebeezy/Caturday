@@ -27,4 +27,8 @@ struct CatFact: Codable {
         self.fact = fact
         self.length = length
     }
+
+    static func example() -> CatFact {
+        return CatFact(fact: "hi", length: 2)
+    }
 }

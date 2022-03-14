@@ -23,7 +23,8 @@ class CaturdayTests: XCTestCase {
 
     func test_getting_cats_success() {
         let result = Result<[Cat], APIError>.success([Cat.example()])
-        let networkManager = NetworkManager(service: APIMockService(result: result))
+        let fact = Result<CatFact, APIError>.success(CatFact.example())
+        let networkManager = NetworkManager(service: APIMockService(result: result, fact: fact))
         let promise = expectation(description: "getting cats")
         
         networkManager.$cats.sink { cat in
@@ -37,7 +38,8 @@ class CaturdayTests: XCTestCase {
     
     func test_loading_url_error() {
         let result = Result<[Cat], APIError>.failure(.badURL)
-        let networkManager = NetworkManager(service: APIMockService(result: result))
+        let fact = Result<CatFact, APIError>.failure(.badURL)
+        let networkManager = NetworkManager(service: APIMockService(result: result, fact: fact))
         let promise = expectation(description: "how bad url error")
         
         networkManager.$cats.sink { cat in
